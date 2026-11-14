@@ -1,0 +1,24 @@
+[package]
+name = "airchat-storage"
+description = "Encrypted storage for AirChat and AirChat+: the key hierarchy (vault), an SQLCipher database with migrations, and files encrypted in chunks"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/kasimtmc/airchat-storage"
+publish = false
+
+[dependencies]
+airchat-protocol = { git = "https://github.com/kasimtmc/airchat-protocol", tag = "v0.3.0" }
+# No SQLite of its own: the app enables a SQLCipher feature of rusqlite (both apps use
+# `bundled-sqlcipher-vendored-openssl`), and `database::open` refuses to run without SQLCipher.
+rusqlite = "0.42.0"
+thiserror = "2.0.21"
+zeroize = { version = "1.9.1", features = ["derive"] }
+
+[dev-dependencies]
+rusqlite = { version = "0.42.0", features = ["bundled-sqlcipher-vendored-openssl"] }
+tempfile = "3"
+
+# Key derivation is unusably slow unoptimised; optimise it even in debug builds.
+[profile.dev.package.argon2]
+opt-level = 3
