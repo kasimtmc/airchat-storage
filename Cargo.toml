@@ -1,14 +1,14 @@
 [package]
 name = "airchat-storage"
 description = "Encrypted storage for AirChat and AirChat+: the key hierarchy (vault), an SQLCipher database with migrations, and files encrypted in chunks"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "GPL-3.0-or-later"
 repository = "https://github.com/kasimtmc/airchat-storage"
 publish = false
 
 [dependencies]
-airchat-protocol = { git = "https://github.com/kasimtmc/airchat-protocol", tag = "v0.3.0" }
+airchat-protocol = { git = "https://github.com/kasimtmc/airchat-protocol", tag = "v0.4.0" }
 # No SQLite of its own: the app enables a SQLCipher feature of rusqlite (both apps use
 # `bundled-sqlcipher-vendored-openssl`), and `database::open` refuses to run without SQLCipher.
 rusqlite = "0.42.0"

@@ -21,7 +21,7 @@ The tables are each app's own; this crate knows none. Cryptography comes from
 Depend on a tag, and enable SQLCipher in rusqlite yourself (the same rusqlite version):
 
 ```toml
-airchat-storage = { git = "https://github.com/kasimtmc/airchat-storage", tag = "v0.1.0" }
+airchat-storage = { git = "https://github.com/kasimtmc/airchat-storage", tag = "v0.1.1" }
 rusqlite = { version = "0.42.0", features = ["bundled-sqlcipher-vendored-openssl"] }
 ```
 
