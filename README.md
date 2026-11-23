@@ -1,7 +1,7 @@
 # airchat-storage
 
 Encrypted storage shared by [AirChat](https://github.com/kasimtmc/AirChat) and
-[AirChat+](https://github.com/kasimtmc/airchat-plus): nothing an app stores is ever on disk in
+[AirChat+](https://github.com/kasimtmc/AirChatPlus): nothing an app stores is ever on disk in
 plaintext.
 
 - **Vault:** a random master key, wrapped by a PIN (Argon2id) and optionally by a 32-byte unlock
